@@ -1,0 +1,20 @@
+<p-fieldset legend="{{'Me To Do List: ' + counterText}}">
+  <div class="flex flex-column gap-2 mb-2">
+    <label htmlFor="">Search</label>
+    <input type="text" pInputText [(ngModel)]="search" />
+  </div>
+  <div class="flex flex-column gap-2">
+    <label htmlFor="">Add</label>
+    <input type="text" pInputText [(ngModel)]="title" />
+  </div>
+  <p-button
+    (click)="addTodo({title, description: title, completed: false})"
+    icon="pi pi-check"
+
+    />
+  <ul>
+    <li *ngFor="let todo of currentTodos">
+      <app-todo-item [todo]="todo" />
+    </li>
+  </ul>
+</p-fieldset>

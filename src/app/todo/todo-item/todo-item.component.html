@@ -1,0 +1,12 @@
+<p-card header="{{todo.title}}">
+    <p class="m-0">
+      {{todo.description}}
+    </p>
+  <div>
+    <p-button
+      (click)="deleteTodo(todo.id)"
+      icon="pi pi-times"
+      styleClass="p-button-danger p-button-rounded"
+    />
+  </div>
+</p-card>
